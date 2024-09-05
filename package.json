@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "discord.js framework",
   "type": "module",
-  "main": "index.js",
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
   "scripts": {
     "lint": "eslint && prettier src --check",
     "lint:fix": "eslint --fix && prettier src --write",
@@ -30,5 +31,20 @@
     "tsup": "^8.2.4",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.4.0"
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "discord.js": "^14.16.1"
   }
 }
